@@ -1,0 +1,24 @@
+service:
+  name: service2
+  identifier: service2
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: manifest1
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: gitconnectorcd
+                  gitFetchType: Branch
+                  paths:
+                    - guestbook/guestbook-ui-svc.yaml
+                  branch: master
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: project1
