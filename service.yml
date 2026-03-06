@@ -1,0 +1,22 @@
+service:
+  name: service1
+  identifier: service1
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: manifest1
+            type: DeploymentRepo
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: gitconnectorcd
+                  gitFetchType: Branch
+                  paths:
+                    - guestbook/guestbook-ui-deployment.yaml
+                  branch: master
+  gitOpsEnabled: true
+  orgIdentifier: default
+  projectIdentifier: project1
