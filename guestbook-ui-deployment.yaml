@@ -3,6 +3,6 @@ environment:
   identifier: environment2
   description: ""
   tags: {}
-  type: Production
+  type: PreProduction
   orgIdentifier: default
   projectIdentifier: project1
